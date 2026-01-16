@@ -24,15 +24,17 @@
     "dist"
   ],
   "scripts": {
-    "build": "tsdown",
-    "dev": "tsdown --watch --sourcemap",
+    "build": "pnpm -r --filter='./packages/*' run build",
+    "dev": "pnpm -r --filter='./packages/*' run dev",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "release": "pnpm build && changeset publish",
     "lint": "biome check",
     "lint:fix": "biome check --write .",
     "prepare": "simple-git-hooks",
-    "release": "bumpp && pnpm publish",
-    "start": "tsx src/index.ts",
     "test": "vitest",
-    "typecheck": "tsc --noEmit"
+    "test:ci": "vitest run",
+    "typecheck": "pnpm -r --filter='./packages/*' run typecheck"
   },
   "simple-git-hooks": {
     "pre-commit": "pnpm i --frozen-lockfile --ignore-scripts --offline && pnpx lint-staged"
@@ -53,6 +55,7 @@
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vite": "^7.3.1",
+    "vite-tsconfig-paths": "^6.0.4",
     "vitest": "^4.0.16"
   },
   "packageManager": "pnpm@10.28.0"

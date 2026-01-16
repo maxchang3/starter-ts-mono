@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "demo",
+  "version": "0.0.0",
+  "description": "_description_",
+  "license": "MIT",
+  "author": "maxchang3",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
+  },
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsdown",
+    "dev": "tsdown --watch --sourcemap",
+    "typecheck": "tsc --noEmit"
+  }
+}

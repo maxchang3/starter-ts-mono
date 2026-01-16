@@ -23,6 +23,7 @@ jobs:
           cache: pnpm
 
       - run: pnpm lint
+      - run: pnpm build
       - run: pnpm typecheck
 
   test:
@@ -46,4 +47,4 @@ jobs:
           cache: pnpm
 
       - run: pnpm build
-      - run: pnpm test
+      - run: pnpm test:ci
