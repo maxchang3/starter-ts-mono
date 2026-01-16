@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.11",
+    "@changesets/cli": "^2.29.8",
     "@maxchang/biome-config": "^0.1.7",
     "@types/node": "^22.19.5",
     "bumpp": "10.0.3",
