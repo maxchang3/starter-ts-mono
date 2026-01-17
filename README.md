@@ -1,4 +1,4 @@
-# pkg-placeholder
+# root-placeholder
 
 _description_
 
